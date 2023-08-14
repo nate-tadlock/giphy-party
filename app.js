@@ -15,13 +15,16 @@ function addGif(response) {
     let randomIndex = Math.floor(Math.random() * resultsIdx);
     let $newDiv = $("<div>");
     let $newGif = $("<img>", {
-        src: response[randomIndex].images.original.url
+        src: response[randomIndex].images.original.url,
+        id: "gifTile"
     });
     $newDiv.append($newGif);
     $gifs.append($newDiv);
     }
 
-
+$("#remove").on("click", function(){
+    $gifs.empty();
+});
 
 
 
